@@ -1,11 +1,12 @@
 {
-  "name": "blib",
+  "name": "@the-1aw/blib",
   "version": "0.0.1",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "repository": "git@github.com:the-1aw/blib.git",
   "author": "the-1aw <bguilliod@gmail.com>",
   "license": "MIT",
+  "private": false,
   "files": ["lib/**/*"],
   "scripts": {
     "build": "tsc -p tsconfig.json",

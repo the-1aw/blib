@@ -1,3 +1,3 @@
-const greet = (name: string) => `Hola amigo ${name}`;
+const greet = (name: string) => `Welcome to blib amigo ${name}`;
 
 export default greet;
