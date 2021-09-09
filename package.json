@@ -1,0 +1,23 @@
+{
+  "name": "blib",
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "repository": "git@github.com:the-1aw/blib.git",
+  "author": "the-1aw <bguilliod@gmail.com>",
+  "license": "MIT",
+  "files": ["lib/**/*"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "echo DO THE TEST",
+    "lint": "echo DO THE LINT",
+    "prepare" : "yarn build",
+    "prepublishOnly" : "yarn test && yarn lint",
+    "preversion" : "yarn lint",
+    "version" : "yarn format && git add -A src",
+    "postversion" : "git push && git push --tags"
+  },
+  "devDependencies": {
+    "typescript": "^4.4.2"
+  }
+}
