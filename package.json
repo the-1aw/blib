@@ -13,7 +13,7 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "test": "jest",
-    "lint": "echo DO THE LINT",
+    "lint": "eslint --fix src/ --ext .ts",
     "format": "prettier --write src/**/*.ts",
     "prepare": "husky install",
     "prepublishOnly": "yarn test && yarn lint",
