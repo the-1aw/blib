@@ -15,11 +15,20 @@
     "test": "echo DO THE TEST",
     "lint": "echo DO THE LINT",
     "format": "prettier --write src/**/*.ts",
-    "prepare": "yarn build",
+    "prepare": "husky install",
     "prepublishOnly": "yarn test && yarn lint",
     "preversion": "yarn lint",
     "version": "yarn format && git add -A src",
-    "postversion": "git push && git push --tags"
+    "postversion": "git push && git push --tags",
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{ts,js}": [
+      "eslint --fix"
+    ],
+    "*.{json,md,html}": [
+      "prettier --write"
+    ]
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.31.0",
@@ -28,8 +37,9 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-airbnb-typescript": "^14.0.0",
     "eslint-plugin-import": "^2.24.2",
+    "husky": "^7.0.0",
+    "lint-staged": "^11.1.2",
     "prettier": "^2.4.0",
     "typescript": "^4.4.2"
-  },
-  "dependencies": {}
+  }
 }
